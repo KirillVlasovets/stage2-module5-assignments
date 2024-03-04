@@ -41,13 +41,13 @@ public class LocalProcessor {
     public void listIterator(List<String> stringList) {
         stringLinkedList = new LinkedList<>(stringList);
         for (String stringLinkedListElement : stringLinkedList) {
-            System.out.println(stringLinkedListElement.hashCode());
+            System.out.println(String.valueOf(stringLinkedListElement).hashCode());
         }
     }
 
     @FullNameProcessorGeneratorAnnotation
     public String fullNameProcessorGenerator(LinkedList<String> stringLinkedList) {
-        for (String stringLinkedListElement : stringLinkedList) {
+        for (String stringLinkedListElement : this.stringLinkedList) {
             processorName.append(stringLinkedListElement).append(" ");
         }
         return String.valueOf(processorName);
