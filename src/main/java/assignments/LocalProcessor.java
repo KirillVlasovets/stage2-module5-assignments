@@ -9,6 +9,7 @@ import lombok.Setter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
@@ -20,11 +21,11 @@ public class LocalProcessor {
     private StringBuilder processorVersion;
     private Integer valueOfCheap;
     private Scanner informationScanner;
-    private LinkedList<String> stringLinkedList = new LinkedList<>();
+    private List<String> stringLinkedList = new LinkedList<>();
     private Logger logger = Logger.getLogger("LocalProcessor logger");
 
     public LocalProcessor(StringBuilder processorName, Long period, StringBuilder processorVersion, Integer valueOfCheap,
-                          Scanner informationScanner, LinkedList<String> stringLinkedList) {
+                          Scanner informationScanner, List<String> stringLinkedList) {
         this.processorName = processorName;
         this.period = period;
         this.processorVersion = processorVersion;
@@ -64,6 +65,5 @@ public class LocalProcessor {
             } finally {
                 informationScanner.close();
             }
-
     }
 }
